@@ -1,0 +1,32 @@
+body,html{
+	padding:0;
+	margin:0;
+}
+.m-modal{
+	height:100%;
+	width:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background-color:rgba(0,0,0,0.7);
+	text-align:center;
+	color:#aaa;
+}
+.m-modal .modal_align,.m-modal .modal_wrap{
+	display:inline-block;
+	vertical-align:baseline;
+	zoom:1;
+	*display:inline;
+	*vertical-align:auto;
+	vertical-align:middle;
+}
+.m-modal .modal_align{
+	height:100%;
+	width:1px;
+	line-height:100%;
+}
+
+.m-modal .modal_body{
+	background-color:#fff;
+	border-top:1px solid #eee;
+}

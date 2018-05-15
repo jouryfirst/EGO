@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="user-scalable=no, width=device-width">
+		<meta name="description" content="ego" />
+		<meta name="keywords" content="ego" />
+		<title>ego</title>
+		<link href="../../common/base.css" rel="stylesheet" />
+		<link href="../../page/works/list.css" rel="stylesheet" />
+		<link href="../../common/modal.css" rel="stylesheet" />
+
+	</head>
+
+	<body>
+		<!--顶栏-->
+		<div class="g-header">
+			<div class="center clearfix">
+				<div class="logo">
+					<img src="../../img/header/logo.gif" />
+				</div>
+				<div class="m-tabs" id="hdtabs">
+					<ul class="f-cb">
+						<li class="z-active">
+							<a href="/index">首页</a>
+						</li>
+						<li>
+							<a href="/works">作品</a>
+						</li>
+						<li>
+							<a href="">圈子</a>
+						</li>
+						<li>
+							<a href="">奇思妙想</a>
+						</li>
+					</ul>
+					<div class="tabs_track">
+						<div class="tabs_thumb" style="width: 68px;left: 0px;"></div>
+					</div>
+				</div>
+				<form action="/search" id="search" method="get">
+					<div class="u-search">
+						<input type="text" name="keyword" id="keyword" placeholder="输入搜索内容" />
+						<button class="u-icon u-icon-search u-icon-btn" type="submit"></button>
+					</div>
+				</form>
+				<div class="g-guest" id="guest">
+					<button class="u-btn u-btn-primary u-btn-icon" id="login">
+						<i class="u-icon u-icon-user"></i>登录
+					</button>
+					<button class="u-btn u-btn-link" id="register">注册</button>
+				</div>
+				<div class="m-user clearfix" id="userdropdown">
+					<div class="user_info">
+						<i class="user_avatar"></i>
+						<div class="user_box">
+							<span class="user_name" id="name"></span>
+							<i class="u-icon-sex"></i>
+						</div>
+						<span class="u-icon u-icon-down"><img src="../../img/header/down.gif"/></span>
+					</div>
+					<ul class="user_list">
+						<li>
+							<a href="#">个人中心</a>
+						</li>
+						<li>
+							<a href="#">信息</a>
+							</</li>
+							<li>
+								<a href="#">设置</a>
+								</</li>
+								<li id="logout">
+									<a href="#">退出账号</a>
+									</</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--banner-->
+		<div class="d-banner">
+			<img src="../../img/banner/d-banner.gif" />
+		</div>
+		<!--main-->
+		<div class="center clearfix d-body">
+			<div class="d-side">
+				<ul>
+					<li class="msg">个人中心<i class="red"></i></li>
+					<li class="z-active">我的作品</li>
+					<li>我关注的</li>
+					<li>我的圈子</li>
+					<li>消息提醒</li>
+					<li>隐私设置</li>
+				</ul>
+			</div>
+			<div class="d-main">
+				<div class="d-user">
+
+				</div>
+				<div class="d-workstitle">
+					<h4 class="title">/我发表的作品/</h4>
+					<div class="u-btn">
+						<a href="/works/create">上传作品</a>
+					</div>
+					<div class="m-worklist"></div>
+
+				</div>
+			</div>
+		</div>
+		<script src="../../page/works/list.js"></script>
+		<script src="../../common/root.js"></script>
+		<script src="../../common/emitter.js"></script>
+		<script src="../../component/userinfo.js"></script>
+		<script src="../../component/worklist.js"></script>
+		<script src="../../component/pagination.js"></script>
+		<script src="../../component/validator.js"></script>
+		<script src="../../component/modal.js"></script>
+		<script src="../../component/login.js"></script>
+		<script src="../../component/register.js"></script>
+		<!--<script src="../../page/index.js"></script>-->
+		<script src="../../component/tabs.js"></script>
+		<script src="../../component/search.js"></script>
+		<script src="../../component/select.js"></script>
+		<script src="../../component/CascadeSelect.js"></script>
+		<script src="../../common/address_codes.js"></script>
+		<script src="../../common/md5.js"></script>
+		<script type="text/javascript">
+			var userbox = document.getElementById('userdropdown');
+			var user_name = document.getElementById('name');
+			var SexIcon = document.getElementsByClassName('u-icon-sex')[0];
+			var logout = document.getElementById('logout');
+			//var page_num = new Pagination();
+			logout.addEventListener('click', function() {
+				_.ajax({
+					url: '/api/logout',
+					method: 'POST',
+					data: {},
+					success: function(data) {
+						data = JSON.parse(data);
+						console.log(data);
+						if(data.code === 200) {
+							window.location.href = "/index";
+						}
+					},
+					fail: function() {}
+				})
+			});
+		</script>
+	</body>
+
+</html>

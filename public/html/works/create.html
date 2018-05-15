@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="user-scalable=no, width=device-width">
+		<meta name="description" content="ego" />
+		<meta name="keywords" content="ego" />
+		<title>ego</title>
+		<link href="../../common/base.css" rel="stylesheet" />
+		<link href="../../page/works/create.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../common/modal.css" />
+	</head>
+
+	<body>
+		<!--顶栏-->
+		<div class="g-header">
+			<div class="center clearfix">
+				<div class="logo">
+					<img src="../img/header/logo.gif" />
+				</div>
+				<div class="m-tabs" id="hdtabs">
+					<ul class="f-cb">
+						<li>
+							<a href="/index">首页</a>
+						</li>
+						<li class="z-active">
+							<a href="/works">作品</a>
+						</li>
+						<li>
+							<a href="">圈子</a>
+						</li>
+						<li>
+							<a href="">奇思妙想</a>
+						</li>
+					</ul>
+					<div class="tabs_track">
+						<div class="tabs_thumb" style="width: 68px;left: 0px;"></div>
+					</div>
+				</div>
+				<form action="/search" id="search" method="get">
+					<div class="u-search">
+						<input type="text" name="keyword" id="keyword" placeholder="输入搜索内容" />
+						<button class="u-icon u-icon-search u-icon-btn" type="submit"></button>
+					</div>
+				</form>
+				<div class="g-guest" id="guest">
+					<button class="u-btn u-btn-primary u-btn-icon" id="login">
+						<i class="u-icon u-icon-user"></i>登录
+					</button>
+					<button class="u-btn u-btn-link" id="register">注册</button>
+				</div>
+				<div class="m-user clearfix" id="userdropdown">
+					<div class="user_info">
+						<i class="user_avatar"></i>
+						<div class="user_box">
+							<span class="user_name" id="name"></span>
+							<i class="u-icon-sex"></i>
+						</div>
+						<span class="u-icon u-icon-down"><img src="../img/header/down.gif"/></span>
+					</div>
+					<ul class="user_list">
+						<li>
+							<a href="#">个人中心</a>
+						</li>
+						<li>
+							<a href="#">信息</a>
+							</</li>
+							<li>
+								<a href="#">设置</a>
+								</</li>
+								<li id="logout">
+									<a href="#">退出账号</a>
+									</</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="create_body clearfix">
+
+			<!-- 主栏 -->
+			<div class="u-main">
+				<div class="workClass">
+					<span class="c-title">作品分类</span>
+					<label class="works_radio">
+                    <input type="radio" name="category" value="0" checked>
+                    <span class="u-btn">原创</span>
+                </label>
+					<label class="works_radio">
+                    <input type="radio" name="category" value="1">
+                    <span class="u-btn u-btn-primary">临摹</span>
+                </label>
+				</div>
+				<div class="uploadImg"></div>
+				<div class="m-work-detail">
+					<div class="m-work-title">
+						<span class="work_title c-title">作品名称</span>
+						<input class="u-ipt u-ipt-name" placeholder="给作品起个名字吧">
+						<span class="prompt_msg f-dn">你的作品还没有取名字哦</span>
+					</div>
+					<div class="m-work-description">
+						<span class="work_description c-title">作品说明</span>
+						<textarea class="u-ipt u-ipt-des" placeholder="给作品描述一下吧(可选填)"></textarea>
+					</div>
+					<div class="m-work-tags"></div>
+					<button class="u-btn-work-submit u-btn">创&nbsp;建</button>
+				</div>
+
+			</div>
+			<!-- 侧边栏 -->
+			<div class="u-side">
+				<div class="m-privilege">
+					<span class="c-title">权限设置</span>
+					<ul class="m-radio">
+						<li>
+							<label class="f-cb">
+                            <input type="radio" checked name="privilege" value="0">
+                            <i class="u-icon u-icon-radio"></i>
+                            所有人可见
+                        </label>
+						</li>
+						<li>
+							<label class="f-cb">
+                            <input type="radio" name="privilege" value="1">
+                            <i class="u-icon u-icon-radio"></i>
+                            关注者／粉丝可见
+                        </label>
+						</li>
+						<li>
+							<label class="f-cb">
+                            <input type="radio" name="privilege" value="2">
+                            <i class="u-icon u-icon-radio"></i>
+                            仅自己可见
+                        </label>
+						</li>
+					</ul>
+				</div>
+				<div class="m-authorization">
+
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../../page/works/create.js"></script>
+		<script src="../../common/root.js"></script>
+		<script src="../../common/emitter.js"></script>
+		<script src="../../component/validator.js"></script>
+		<script src="../../component/modal.js"></script>
+		<script src="../../component/login.js"></script>
+		<script src="../../component/register.js"></script>
+		<!--<script src="../../page/index.js"></script>-->
+		<script src="../../component/tabs.js"></script>
+		<script src="../../component/search.js"></script>
+		<script src="../../component/select.js"></script>
+		<script src="../../component/CascadeSelect.js"></script>
+		<script src="../../common/address_codes.js"></script>
+		<script src="../../common/md5.js"></script>
+		<script src="../../component/authorization.js"></script>
+		<script src="../../component/uploadImg.js"></script>
+		<script src="../../component/tags.js"></script>
+		<script type="text/javascript">
+			var userbox = document.getElementById('userdropdown');
+			var user_name = document.getElementById('name');
+			var SexIcon = document.getElementsByClassName('u-icon-sex')[0];
+			var logout = document.getElementById('logout');
+			logout.addEventListener('click', function() {
+				_.ajax({
+					url: '/api/logout',
+					method: 'POST',
+					data: {},
+					success: function(data) {
+						data = JSON.parse(data);
+						console.log(data);
+						if(data.code === 200) {
+							window.location.href = "/index";
+						}
+					},
+					fail: function() {}
+				})
+			});
+		</script>
+	</body>
+
+</html>
