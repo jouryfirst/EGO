@@ -3,7 +3,8 @@
 所有交互及AJAX请求均通过原生JavaScript实现，不使用第三方框架和库（如jQuery）。
 PS：后端由网易云提供，限制了访问频率。因此部分AJAX请求会被挂起，导致页面渲染不完整、交互无法及时反馈。
 主页demo：https://jouryfirst.github.io/EGO/public/html/index.html
-上传作品页demo：https://jouryfirst.github.io/EGO/public/html/works/create.html
+    上传作品页demo：https://jouryfirst.github.io/EGO/public/html/works/create.html
+    作品列表页demo：https://jouryfirst.github.io/EGO/public/html/works/list.html
 
 实现功能：
     •	首页
