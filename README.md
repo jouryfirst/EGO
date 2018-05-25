@@ -5,10 +5,10 @@ PS：后端由网易云提供，限制了访问频率。因此部分AJAX请求�
 主页demo：https://jouryfirst.github.io/EGO/public/html/index.html
 
 实现功能：
-•	首页
-  i	顶部tab
-    a	有选中效果
-    b	hover动画效果
+    •	首页
+      i	顶部tab
+       a	有选中效果
+       b	hover动画效果
 ii	顶部搜索
 a	输入非空进行搜索操作
 b	回车和点击图标都可进行搜索操作
